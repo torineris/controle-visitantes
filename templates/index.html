@@ -155,18 +155,20 @@
                                         </thead>
 
                                         <tbody>
-                                            <tr>
-                                                <td>Don Corleone</td>
-                                                <td>123.123.123.12</td>
-                                                <td>22 de agosto de 2079 as 15:30</td>
-                                                <td>22 de agosto de 2079 as 15:38</td>
-                                                <td>Darth Vader</td>
-                                                <td>
-                                                    <a href="#">
-                                                        Ver informações
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                            {% for visitante in todos_visitantes %}
+                                                <tr>
+                                                    <td>{{ visitante.nome_completo }}</td>
+                                                    <td>{{ visitante.cpf }}</td>
+                                                    <td>{{ visitante.horario_chegada }}</td>
+                                                    <td>{{ visitante.horario_autorizacao }}</td>
+                                                    <td>{{ visitante.morador_responsavel }}</td>
+                                                    <td>
+                                                        <a href="#">
+                                                            Ver informações
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
