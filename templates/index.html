@@ -7,6 +7,14 @@
         <h1 class="h3 mb-0 text-gray-800">{{ nome_pagina }}</h1>
     </div>
 
+    {% if messages %}
+        {% for mensagem in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ mensagem }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
     <div class="row">
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
