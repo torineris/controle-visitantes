@@ -6,6 +6,15 @@
 <div class="container">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">{{ nome_pagina }}</h1>
+
+        <div>
+            <a href="#" class="btn btn-success btn-icon-split btn-sm" data-toggle="modal" data-target="#modal1">
+                <span class="text">Autorizar entrada</span>
+                <span class="icon text-white-50">
+                    <i class="fas fa-user-check"></i>
+                </span>
+            </a>
+        </div>
     </div>
     
     <div class="card shadow mb-4">        
@@ -85,6 +94,35 @@
                 <a href="#" class="btn btn-secondary text-white" type="button">
                     <span class="text">Voltar</span>
                 </a>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Autorizar entrada de visitante</h5>
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    <form method="post">
+                        {% csrf_token %}
+    
+                        <div class="form-group">
+                            <label for="id_morador_responsavel" class="col-form-label">Nome do morador responsável por autorizar a entrada do visitante:</label>
+                            {% render_field form.morador_responsavel placeholder="Nome do morador responsável por autorizar a entrada do visitante" class="form-control" %}
+                        </div>
+                            
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Autorizar entrada</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
