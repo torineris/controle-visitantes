@@ -36,14 +36,18 @@
         
             <form>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label>Horário de chegada</label>
                         <input type="text" class="form-control" value="{{ visitante.horario_chegada }}" disabled>
                     </div>
 
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label>Número da casa a ser visitada</label>
                         <input type="text" class="form-control" value="{{ visitante.numero_casa }}" disabled>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Status</label>
+                        <input type="text" class="form-control" value="{{ visitante.get_status_display }}" disabled>
                     </div>
                 </div>
 
@@ -78,7 +82,7 @@
 
                     <div class="form-group col-md-6">
                         <label>CPF</label>
-                        <input type="text" class="form-control" value="{{ visitante.cpf }}" disabled>
+                        <input type="text" class="form-control" value="{{ visitante.get_cpf }}" disabled>
                     </div>
                 </div>
 
@@ -102,7 +106,7 @@
             </p>
         
             <div class="mr-1 text-right">
-                <a href="#" class="btn btn-secondary text-white" type="button">
+                <a href="{% url 'index' %}" class="btn btn-secondary text-white" type="button">
                     <span class="text">Voltar</span>
                 </a>
             </div>

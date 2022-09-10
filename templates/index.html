@@ -103,6 +103,7 @@
                         <th>Nome completo</th>
                         <th>CPF</th>
                         <th>Horário de chegada</th>
+                        <th>Status</th>
                         <th>Horário da autorização</th>
                         <th>Autorizado por</th>
                         <th>Mais informações</th>
@@ -112,8 +113,9 @@
                         {% for visitante in todos_visitantes %}
                             <tr>
                                 <td>{{ visitante.nome_completo }}</td>
-                                <td>{{ visitante.cpf }}</td>
+                                <td>{{ visitante.get_cpf }}</td>
                                 <td>{{ visitante.horario_chegada }}</td>
+                                <td>{{ visitante.get_status_display }}</td>
                                 <td>{{ visitante.get_horario_autorizacao }}</td>
                                 <td>{{ visitante.get_morador_responsavel }}</td>
                                 <td>
