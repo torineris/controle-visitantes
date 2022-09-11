@@ -17,6 +17,15 @@ urlpatterns = [
         ),
         name="login"
     ),
+    
+    path(
+        "logout/",
+        auth_views.LogoutView.as_view(
+            template_name="logout.html"
+        ),
+        name="logout"
+    ),
+
     path("", index, name="index",),
     path("registrar-visitante/", registrar_visitante, name="registrar_visitante",),
     path("visitantes/<int:id>/", informacoes_visitante, name="informacoes_visitante"),
